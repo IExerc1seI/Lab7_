@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мій туристичний сайт</title>
+    <style>
+        /* Стилі для хедера */
+        header {
+            background-color: #f8f9fa;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid #ddd;
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .login-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .login-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Стилі для мобільного меню */
+        .mobile-menu-button {
+            display: none;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 70px;
+            right: 20px;
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .mobile-nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .mobile-nav ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Стилі для секції продуктів */
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .product-card h2 {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+
+        .product-card p {
+            font-size: 1em;
+            color: #666;
+        }
+
+        .product-card .price {
+            font-size: 1.2em;
+            color: #000;
+            font-weight: bold;
+        }
+
+        .product-card button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .product-card button:hover {
+            background-color: #218838;
+        }
+
+        /* Медіа-запити */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+
+            .mobile-menu-button {
+                display: block;
+            }
+        }
+    </style>
+    <script>
+        // Скрипт для показу мобільного меню
+        document.addEventListener("DOMContentLoaded", function () {
+            const mobileMenuButton = document.querySelector(".mobile-menu-button");
+            const mobileNav = document.querySelector(".mobile-nav");
+
+            mobileMenuButton.addEventListener("click", function () {
+                mobileNav.style.display = mobileNav.style.display === "block" ? "none" : "block";
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <!-- Хедер сайту -->
+    <header>
+        <img src="logo.jpg" alt="Логотип сайту">
+        <nav>
+            <ul>
+                <li><a href="#">Головна</a></li>
+                <li><a href="#">Продукти</a></li>
+                <li><a href="#">Про нас</a></li>
+                <li><a href="#">Контакти</a></li>
+            </ul>
+        </nav>
+        <button class="login-button">Вхід</button>
+        <button class="mobile-menu-button">Меню</button>
+    </header>
+
+    <!-- Мобільне меню -->
+    <div class="mobile-nav">
+        <ul>
+            <li><a href="#">Головна</a></li>
+            <li><a href="#">Продукти</a></li>
+            <li><a href="#">Про нас</a></li>
+            <li><a href="#">Контакти</a></li>
+        </ul>
+    </div>
+
+    <!-- Основний контент -->
+    <main>
+        <!-- Картки продуктів -->
+        <article class="product-card">
+            <img src="Таїланд.jpg" alt="Таїланд">
+            <h2>Відпочинок у Таїланді</h2>
+            <p>Відвідайте красиві пляжі Пхукету та динамічну столицю Бангкок. Насолоджуйтесь культурою та кухнею Таїланду.</p>
+            <p class="price">Ціна: 20000 грн</p>
+            <button>Купити</button>
+        </article>
+
+        <article class="product-card">
+            <img src="Мальдіви.jpg" alt="Мальдіви">
+            <h2>Відпочинок на Мальдівах</h2>
+            <p>Ідеальне місце для романтичного відпочинку. Білі піщані пляжі та блакитні лагуни чекають на вас.</p>
+            <p class="price">Ціна: 50000 грн</p>
+            <button>Купити</button>
+        </article>
+
+        <article class="product-card">
+            <img src="Париж.jpg" alt="Париж">
+            <h2>Тур до Парижа</h2>
+            <p>Відкрийте для себе місто кохання. Відвідайте Ейфелеву вежу, Лувр та прогуляйтесь по набережній Сени.</p>
+            <p class="price">Ціна: 30000 грн</p>
+            <button>Купити</button>
+        </article>
+
+        <article class="product-card">
+            <img src="Єгипет.jpg" alt="Єгипет">
+            <h2>Тур до Єгипту</h2>
+            <p>Досліджуйте давні піраміди Гізи, занурюйтесь у Червоне море та насолоджуйтесь сонцем у Шарм-ель-Шейху.</p>
+            <p class="price">Ціна: 15000 грн</p>
+            <button>Купити</button>
+        </article>
+    </main>
+
+</body>
+</html>
